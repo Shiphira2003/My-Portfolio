@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import myphoto from "../assets/WhatsApp Image .jpg";
+
+// Import your images
+import myphoto1 from "../assets/WhatsApp Image .jpg";
+import myphoto2 from "../assets/Image .jpg";
+import myphoto3 from "../assets/image3.jpg";
 
 const Hero: React.FC = () => {
+  const photos = [myphoto1, myphoto2, myphoto3];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % photos.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [photos.length]);
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 relative bg-gradient-to-br from-purple-100 via-purple-50 to-white overflow-hidden pt-20 pb-10">
       {/* Soft floating glow */}
@@ -17,11 +31,20 @@ const Hero: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="z-10 mt-16"
       >
-        <img
-          src={myphoto}
-          alt="Shiphira Wamaitha"
-          className="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-purple-300 shadow-xl mb-8 object-cover"
-        />
+        <div className="w-64 h-64 md:w-80 md:h-80 mx-auto mb-8 rounded-full overflow-hidden border-4 border-purple-300 shadow-xl relative">
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentIndex}
+              src={photos[currentIndex]}
+              alt={`Shiphira Wamaitha ${currentIndex + 1}`}
+              className="w-full h-full object-cover absolute"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            />
+          </AnimatePresence>
+        </div>
 
         <h1 className="text-4xl md:text-6xl font-bold text-purple-700 drop-shadow-lg">
           Hi, I'm Shiphira Wamaitha
