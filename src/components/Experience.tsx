@@ -4,14 +4,14 @@ import ExperienceCard from "./ExperienceCard";
 const experiences = [
   {
     company: "Laikipia Internal Attachment",
-    title: "IT Intern – Hardware & Networking",
+    title: "IT Attachee – Hardware & Networking",
     duration: "May 2024 – July 2024",
     description:
       "Focused on hardware troubleshooting, Cisco devices, and configuring switches and routers. Gained hands-on experience in setting up and maintaining local networks.",
   },
   {
     company: "Teach2Give",
-    title: "Software & Mentorship Intern",
+    title: "Software & Mentorship Attachee",
     duration: "May 2024 – August 2024",
     description:
       "Involved in tech community engagement, mentorship, and software development. Collaborated with peers and mentors to build digital skills and empower learners.",

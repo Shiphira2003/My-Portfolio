@@ -28,7 +28,7 @@ const projects = [
     description: "This website! A showcase of my work, skills, and experience.",
     tech: ["TypeScript", "React", "Tailwind", "DaisyUI"],
     github: "https://github.com/Shiphira2003/My-Portfolio.git",
-    demo: "",
+    demo: "https://portfolio-pied-seven-68.vercel.app/",
     image: portfolioImage, 
   },
 ];
