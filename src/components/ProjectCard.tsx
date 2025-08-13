@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
   image,
 }) => {
   return (
-    <div className="card bg-white shadow-md hover:shadow-xl transition-shadow duration-300 rounded-xl border border-purple-100">
+    <div className="card bg-white shadow-md hover:shadow-xl transition-shadow duration-300 rounded-xl border border-purple-100 flex flex-col h-full">
       {image && (
         <figure>
           <img
@@ -30,17 +30,20 @@ const ProjectCard: React.FC<ProjectProps> = ({
         </figure>
       )}
 
-      <div className="card-body">
-        <h2 className="card-title text-purple-700">{title}</h2>
-        <p className="text-gray-700">{description}</p>
-        <div className="flex flex-wrap gap-2 mt-2">
-          {tech.map((t, idx) => (
-            <span key={idx} className="badge badge-outline text-sm border-purple-300 text-purple-700">
-              {t}
-            </span>
-          ))}
+      <div className="card-body flex flex-col flex-grow">
+        <div className="flex-grow">
+          <h2 className="card-title text-purple-700">{title}</h2>
+          <p className="text-gray-700">{description}</p>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {tech.map((t, idx) => (
+              <span key={idx} className="badge badge-outline text-sm border-purple-300 text-purple-700">
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="card-actions mt-4 flex gap-3">
+
+        <div className="card-actions mt-4 flex justify-between items-end">
           <a
             href={github}
             target="_blank"
@@ -54,7 +57,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
               href={demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-sm btn-primary text-white"
+              className="btn btn-sm btn-primary text-black ml-auto"
             >
               <FaExternalLinkAlt /> Demo
             </a>
