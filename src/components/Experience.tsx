@@ -3,13 +3,6 @@ import ExperienceCard from "./ExperienceCard";
 
 const experiences = [
   {
-    company: "Laikipia University",
-    title: "Bachelor of Science in Computer Science",
-    duration: "August 2022 – Present",
-    description:
-      "Currently pursuing a degree in Computer Science with coursework covering algorithms, data structures, software engineering, database systems, and computer networks. Gaining both theoretical knowledge and practical skills in programming (Python, Java, C++), web development, and system analysis. Participating in academic projects that involve full-stack development, problem-solving, and collaborative teamwork.",
-  },
-  {
     company: "Laikipia Internal Attachment",
     title: "IT Attachee – Hardware & Networking",
     duration: "May 2024 – July 2024",
@@ -30,7 +23,7 @@ const Experience: React.FC = () => {
     <section id="experience" className="py-20 px-6 lg:px-24 bg-base-100 text-base-content">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold text-primary mb-2">Experience</h2>
-        <p className="text-lg text-gray-600">My educational background and professional experiences.</p>
+        <p className="text-lg text-gray-600">Internships and learning opportunities I’ve taken part in.</p>
       </div>
 
       <div className="space-y-6 max-w-4xl mx-auto">
