@@ -1,5 +1,6 @@
 
 import About from "./components/About";
+import Certifications from "./components/Certification";
 import  Community from "./components/Community";
 import  Contact from "./components/Contact";
 import Experience from "./components/Experience";
@@ -18,6 +19,7 @@ function App() {
         <Projects/>
         <Experience/>
         <Community/>
+        <Certifications />
         <Contact/>
         <Footer />
         </main>

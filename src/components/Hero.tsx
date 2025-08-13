@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
         <div className="mt-8">
           <a
             href="#projects"
-            className="btn btn-primary btn-wide gap-2 text-white text-lg shadow-lg hover:scale-105 transition-transform"
+            className="btn btn-primary btn-wide gap-2 text-purple-400 text-lg shadow-lg hover:scale-105 transition-transform"
           >
             See My Work <FaArrowRight />
           </a>
