@@ -1,41 +1,29 @@
 import React from "react";
 import CertificationCard from "./CertificationCard";
 import { motion } from "framer-motion";
+import womenDigitalCert from "../assets/widb.jpg";
+import teach2giveCert from "../assets/teach2give.jpg";
 
 type Certification = {
   title: string;
   issuer: string;
   date: string;
-  credentialId?: string;
-  credentialUrl?: string;
-  downloadUrl?: string;
-  image?: string;
+  image: string;
 };
 
 const Certifications: React.FC = () => {
   const certifications: Certification[] = [
     {
-      title: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "June 2023",
-      credentialId: "AWS-1234-5678-90",
-      credentialUrl: "https://example.com/verify",
-      downloadUrl: "/certificates/aws-cert.pdf",
-      image: "/aws-logo.png",
+      title: "Women in Digital Business Certification",
+      issuer: "Women in Digital Business Initiative",
+      date: "2025",
+      image: womenDigitalCert,
     },
     {
-      title: "Advanced React Concepts",
-      issuer: "Meta (Facebook)",
-      date: "March 2023",
-      credentialUrl: "https://example.com/verify-react",
-      downloadUrl: "/certificates/react-cert.pdf",
-    },
-    {
-      title: "Node.js Professional Certification",
-      issuer: "OpenJS Foundation",
-      date: "January 2023",
-      credentialId: "NODE-9988-7766",
-      downloadUrl: "/certificates/node-cert.pdf",
+      title: "Software Development Certification",
+      issuer: "Teach2Give",
+      date: "2025",
+      image: teach2giveCert,
     }
   ];
 
@@ -49,7 +37,7 @@ const Certifications: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            Professional Certifications
+            My Certifications
           </motion.h2>
           <motion.p
             className="text-lg text-gray-500 max-w-2xl mx-auto"
@@ -57,11 +45,11 @@ const Certifications: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.4 }}
           >
-            Validated skills and qualifications from accredited organizations
+            Official recognition of my skills and accomplishments
           </motion.p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {certifications.map((cert, index) => (
             <motion.div
               key={index}
