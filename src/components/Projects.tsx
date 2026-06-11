@@ -5,8 +5,17 @@ import ProjectCard from "./ProjectCard";
 import carRentalImage from "../assets/car-rental.jpg"; 
 import moviePlannerImage from "../assets/movie-planner.jpg";
 import portfolioImage from "../assets/portfolio.jpg";
+import vaultOsImage from "../assets/vault-os.png";
 
 const projects = [
+  {
+    title: "Vault OS",
+    description: "A secure, high-performance web-based dashboard and system utility interface built on modern web technologies.",
+    tech: ["TanStack Start", "React", "TypeScript", "Vite", "Cloudflare Workers"],
+    github: "https://github.com/Nevy11/Vault.git",
+    demo: "https://tanstack-start-app.vault-os.workers.dev/",
+    image: vaultOsImage,
+  },
   {
     title: "Car Rental System",
     description: "A full-stack web application for booking and managing rental cars.",
@@ -35,10 +44,10 @@ const projects = [
 
 const Projects: React.FC = () => {
   return (
-    <section id="projects" className="py-20 px-6 lg:px-24 bg-base-100 text-base-content">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-24 bg-base-100 text-base-content">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold text-primary mb-2">Projects</h2>
-        <p className="text-lg text-gray-600">A selection of things I've built and worked on.</p>
+        <p className="text-lg text-gray-600 dark:text-neutral-400">A selection of things I've built and worked on.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -3,6 +3,7 @@ import About from "./components/About";
 import Certifications from "./components/Certification";
 import  Community from "./components/Community";
 import  Contact from "./components/Contact";
+import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import  Hero from "./components/Hero";
@@ -16,6 +17,7 @@ function App() {
       <main className="flex-grow">
         <Hero/>
         <About/>
+        <Education/>
         <Projects/>
         <Experience/>
         <Community/>

@@ -20,10 +20,10 @@ const communities = [
 
 const Community: React.FC = () => {
   return (
-    <section id="community" className="py-20 px-6 lg:px-24 bg-base-100 text-base-content">
+    <section id="community" className="py-20 px-4 sm:px-6 lg:px-24 bg-base-100 text-base-content">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold text-primary mb-2">Community Engagement</h2>
-        <p className="text-lg text-gray-600">
+        <p className="text-lg text-gray-600 dark:text-neutral-400">
           Communities that have shaped and inspired my growth in tech.
         </p>
       </div>

@@ -20,18 +20,18 @@ const Hero: React.FC = () => {
   }, [photos.length]);
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 relative bg-gradient-to-br from-purple-100 via-purple-50 to-white overflow-hidden pt-20 pb-10">
+    <section className="min-h-screen flex flex-col items-center justify-center text-center px-4 relative bg-gradient-to-br from-purple-100 via-purple-50 to-white dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 overflow-hidden pt-20 pb-10">
       {/* Soft floating glow */}
-      <div className="absolute -top-16 -left-16 w-96 h-96 bg-purple-200 opacity-20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-purple-300 opacity-10 rounded-full blur-2xl animate-pulse"></div>
+      <div className="absolute -top-16 -left-16 w-96 h-96 bg-purple-200 dark:bg-purple-900 opacity-20 dark:opacity-10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-purple-300 dark:bg-purple-800 opacity-10 dark:opacity-5 rounded-full blur-2xl animate-pulse"></div>
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="z-10 mt-16"
+        className="z-10 mt-16 w-full max-w-lg sm:max-w-xl md:max-w-4xl"
       >
-        <div className="w-64 h-64 md:w-80 md:h-80 mx-auto mb-8 rounded-full overflow-hidden border-4 border-purple-300 shadow-xl relative">
+        <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 mx-auto mb-8 rounded-full overflow-hidden border-4 border-purple-300 dark:border-purple-700 shadow-xl relative">
           <AnimatePresence mode="wait">
             <motion.img
               key={currentIndex}
@@ -46,11 +46,11 @@ const Hero: React.FC = () => {
           </AnimatePresence>
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-bold text-purple-700 drop-shadow-lg">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-purple-700 dark:text-purple-400 drop-shadow-lg px-2">
           Hi, I'm Shiphira Wamaitha
         </h1>
 
-        <p className="mt-4 text-xl md:text-2xl text-gray-700 max-w-xl mx-auto">
+        <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-neutral-300 max-w-xl mx-auto px-4">
           <Typewriter
             words={[
               "Computer Science Student",
@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
         <div className="mt-8">
           <a
             href="#projects"
-            className="btn btn-primary btn-wide gap-2 text-purple-400 text-lg shadow-lg hover:scale-105 transition-transform"
+            className="btn btn-primary btn-wide gap-2 text-purple-400 dark:text-purple-100 text-lg shadow-lg hover:scale-105 transition-transform"
           >
             See My Work <FaArrowRight />
           </a>

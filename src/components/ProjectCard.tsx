@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
   image,
 }) => {
   return (
-    <div className="card bg-white shadow-md hover:shadow-xl transition-shadow duration-300 rounded-xl border border-purple-100 flex flex-col h-full overflow-hidden">
+    <div className="card bg-white dark:bg-neutral-900 shadow-md hover:shadow-xl transition-shadow duration-300 rounded-xl border border-purple-100 dark:border-neutral-800 flex flex-col h-full overflow-hidden">
       {image && (
         <figure className="m-0">
           <img
@@ -32,13 +32,13 @@ const ProjectCard: React.FC<ProjectProps> = ({
 
       <div className="card-body p-6 flex flex-col flex-grow">
         <div className="flex-grow">
-          <h2 className="card-title text-purple-700 mb-2">{title}</h2>
-          <p className="text-gray-700 mb-4">{description}</p>
+          <h2 className="card-title text-purple-700 dark:text-purple-400 mb-2">{title}</h2>
+          <p className="text-gray-700 dark:text-neutral-300 mb-4">{description}</p>
           <div className="flex flex-wrap gap-2">
             {tech.map((t, idx) => (
               <span
                 key={idx}
-                className="badge badge-outline text-sm border-purple-300 text-purple-700"
+                className="badge badge-outline text-sm border-purple-300 dark:border-purple-700 text-purple-700 dark:text-purple-400"
               >
                 {t}
               </span>
@@ -51,7 +51,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-sm btn-outline text-purple-700 border-purple-300 hover:bg-purple-50 flex items-center gap-2"
+            className="btn btn-sm btn-outline text-purple-700 dark:text-purple-400 border-purple-300 dark:border-purple-800 hover:bg-purple-50 dark:hover:bg-purple-950/30 flex items-center gap-2"
           >
             <FaGithub className="text-lg" /> Code
           </a>
@@ -60,7 +60,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
               href={demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-sm btn-primary bg-purple-600 hover:bg-purple-700 text-white flex items-center gap-2"
+              className="btn btn-sm btn-primary bg-purple-600 hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600 text-white flex items-center gap-2"
             >
               <FaExternalLinkAlt className="text-sm" /> Demo
             </a>

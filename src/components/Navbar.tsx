@@ -13,12 +13,14 @@ const Navbar: React.FC = () => {
       (!storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches);
     setDarkMode(isDark);
     document.documentElement.classList.toggle("dark", isDark);
+    document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
   }, []);
 
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
     document.documentElement.classList.toggle("dark", newMode);
+    document.documentElement.setAttribute("data-theme", newMode ? "dark" : "light");
     localStorage.setItem("theme", newMode ? "dark" : "light");
   };
 
@@ -27,6 +29,7 @@ const Navbar: React.FC = () => {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
+    { name: "Education", href: "#education" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Community", href: "#community" },
@@ -77,17 +80,18 @@ const Navbar: React.FC = () => {
               key={link.name}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block text-white hover:text-purple-200"
+              className="block text-white hover:text-purple-200 py-2 border-b border-purple-500/30 last:border-0"
             >
               {link.name}
             </a>
           ))}
           <button
             onClick={toggleDarkMode}
-            className="text-white mt-2"
+            className="flex items-center gap-2 text-white mt-4 bg-purple-700 dark:bg-purple-900 px-4 py-2.5 rounded-lg w-full justify-center hover:bg-purple-800 dark:hover:bg-purple-950 transition-colors"
             aria-label="Toggle dark mode"
           >
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+            <span>{darkMode ? "Light Mode" : "Dark Mode"}</span>
           </button>
         </div>
       )}
